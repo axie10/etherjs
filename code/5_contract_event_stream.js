@@ -20,6 +20,10 @@ const contract = new ethers.Contract(address, ERC20_ABI, provider);
 const main = async () => {
   const block = await provider.getBlockNumber();
   const network = await provider.getNetwork();
+  const address = await contract.address;
+  const symbol = await contract.symbol();
+  console.log('symbol:',symbol);
+  console.log('address:',address);
   console.log('block:',block);
   console.log('network:',network);
 
